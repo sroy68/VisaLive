@@ -90,29 +90,7 @@ function changeLanguage() {
 }
 
 // DISCOUNT
-function updateDiscount() {
-  let rate = 0;
-  if (currentCountry === 'india') rate = 0.25;
-  const isStudent = confirm('Are you a student (18-25)? If YES, press OK for 40% OFF.');
-  if (isStudent && currentCountry === 'india') rate = 0.40;
 
-  discount = {
-    rate,
-    label:
-      rate === 0.40
-        ? '🇮🇳🎓 40% STUDENT OFF'
-        : rate === 0.25
-        ? '🇮🇳 25% OFF'
-        : 'Standard Price'
-  };
-  document.getElementById('discountLabel').textContent = discount.label;
-
-  ['1', '6', '9', '12'].forEach(i => {
-    const plan = 'month' + i;
-    const price = Math.round(basePrices[plan] * (1 - discount.rate) * 100) / 100;
-    document.getElementById('price' + i).textContent = '$' + price;
-  });
-}
 
 // SIMPLE HASH & SECURE LOCAL BACKUP
 function simpleHash(str) {
@@ -222,6 +200,23 @@ function manualBackup() {
   alert('✅ Secure Backup Complete!');
 }
 
+// সম্পূর্ণ অফিসিয়াল URLs (India/Bangladesh থেকে apply-এর জন্য)
+const officialBookingUrls = {
+  usa: 'https://ais.usvisa-info.com/en-in/niv',  // US Visa India
+  india: 'https://visa.vfsglobal.com/ind/en/usa/',  // US/Other visa from India
+  china: 'https://cova.mfa.gov.cn/',  // China Online Visa (COVA)
+  russia: 'https://evisa.kdmid.ru/',  // Russia e-Visa
+  israel: 'https://www.israelvisa.in/',  // Israel Visa India
+  thailand: 'https://www.thaievisa.go.th/',  // Thailand e-Visa
+  uk: 'https://www.gov.uk/standard-visitor/apply-standard-visitor-visa',  // UK GOV
+  australia: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing',  // Australia Immi
+  uae: 'https://uaeportal.ae/',  // UAE/Dubai Tourist Visa
+  dubai: 'https://gdrfad.gov.ae/en/services/8d1a1c36-3997-49ca-8b5e-4ae9c1bb9b3a',  // Dubai GDRFA
+  qatar: 'https://visitqatar.com/intl-en/plan-your-trip/visas',  // Qatar Hayya/Qatar Airways
+  malaysia: 'https://malaysiavisa.imi.gov.my/'  // Malaysia eVISA
+};
+
+// bookOfficialSlot() ফাংশন আগের মতো রাখুন
 // BASIC CLICKJACKING GUARD
 if (window.top !== window.self) {
   window.top.location = window.location;
