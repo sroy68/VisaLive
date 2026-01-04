@@ -62,33 +62,44 @@
       <div>Last: <span id="lastUpdate"></span> | Next: <span id="nextCheck">30s</span></div>
       <button class="btn" onclick="forceCheckSlots()">🔄 Check LIVE</button>
     </div>
-    <!-- Live Slots-এর পর এই সেকশন যোগ করুন -->
-<div class="plans-grid" id="bookingGrid">
+    <div class="plans-grid" style="grid-template-columns: repeat(4,1fr);">
   <div class="plan-card" onclick="bookOfficialSlot('usa')">
-    <div style="font-size:24px">🇺🇸 USA</div>
-    <div id="plan1Label">স্লট বুক করুন</div>
+   
+    // real government web site //
+    
+    🇺🇸 USA<br><small>ustraveldocs.com</small>
+  </div>
+  <div class="plan-card" onclick="bookOfficialSlot('uk')">
+    🇬🇧 UK<br><small>gov.uk</small>
+  </div>
+  <div class="plan-card" onclick="bookOfficialSlot('australia')">
+    🇦🇺 AUS<br><small>homeaffairs.gov.au</small>
+  </div>
+  <div class="plan-card" onclick="bookOfficialSlot('uae')">
+    🇦🇪 UAE/Dubai<br><small>uaeportal.ae</small>
   </div>
   <div class="plan-card" onclick="bookOfficialSlot('india')">
-    <div style="font-size:24px">🇮🇳 India</div>
-    <div id="plan6Label">স্লট বুক করুন</div>
+    🇮🇳 India<br><small>vfsglobal.com</small>
   </div>
-  <div class="plan-card" onclick="bookOfficialSlot('canada')">
-    <div style="font-size:24px">🇨🇦 Canada</div>
-    <div id="plan9Label">স্লট বুক করুন</div>
+  <div class="plan-card" onclick="bookOfficialSlot('china')">
+    🇨🇳 China<br><small>mfa.gov.cn</small>
   </div>
-  <div class="plan-card" onclick="bookOfficialSlot('bangladesh')">
-    <div style="font-size:24px">🇧🇩 BD</div>
-    <div id="plan12Label">স্লট বুক করুন</div>
+  <div class="plan-card" onclick="bookOfficialSlot('russia')">
+    🇷🇺 Russia<br><small>kdmid.ru</small>
+  </div>
+  <div class="plan-card" onclick="bookOfficialSlot('israel')">
+    🇮🇱 Israel<br><small>israelvisa.in</small>
+  </div>
+  <div class="plan-card" onclick="bookOfficialSlot('thailand')">
+    🇹🇭 Thailand<br><small>thaievisa.go.th</small>
+  </div>
+  <div class="plan-card" onclick="bookOfficialSlot('qatar')">
+    🇶🇦 Qatar<br><small>visitqatar.com</small>
+  </div>
+  <div class="plan-card" onclick="bookOfficialSlot('malaysia')">
+    🇲🇾 Malaysia<br><small>imi.gov.my</small>
   </div>
 </div>
-
-<div class="security-bar">
-  ⚠️ শুধুমাত্র অফিসিয়াল সাইটে বুক করুন | কোনো ফি নেই ✅
-</div>
-    <div class="wallet-section">
-      <h3 id="walletTitle">💰 Secure Wallet</h3>
-      <div style="font-size:28px;font-weight:800;color:#ffd700" id="walletBalance">$0</div>
-    </div>
       
 <script>
   // 🔥 GLOBAL VARIABLES
